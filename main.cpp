@@ -1,12 +1,9 @@
 #include <iostream>
-
-using namespace std;
-
-#include <iostream>
 #include <mutex>
 
-using namespace std;
+#include "designpattern.h"
 
+using namespace std;
 /*
  *实例化方面：懒汉式默认不会实例化，外部什么时候调用什么时候new。饿汉式在类加载的时候就实例化，并且创建单例对象。
  *线程安全方面：饿汉式线程安全
@@ -62,16 +59,14 @@ private:
 };
 HungrySingle *HungrySingle::hungrySingle = new HungrySingle();  // HungrySingle
 
-//观察者模式
-class Observer{
-
-};
 
 int main()
 {
     //    Singleton *single = Singleton::instance();
     //    Singleton::DeleteSingleton();
-    HungrySingle *single = HungrySingle::instance();
-    cout << "Hello World!" << endl;
+//    HungrySingle *single = HungrySingle::instance();
+    Secretary *s = new Secretary();
+
+
     return 0;
 }
